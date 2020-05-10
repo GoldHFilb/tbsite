@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+{% for tov in tovs %}
+    <div>
+        <h3>{{ tov.short_name }}</h3>
+        <div>
+            {% if tov.small_photo %}
+                {{ tov.small_photo.url }}
+                <img src="{{ tov.small_photo.url }}" height="255" alt="">
+            {% endif %}
+        </div>
+        <p>{{ tov.created_at }}</p>
+    </div>
+    <hr>
+{% endfor %}
+</body>
+</html>
